@@ -2,7 +2,7 @@ experiment_name: gspo_stage1_2_bs32_rollout32
 trial_name: trial_0
 seed: 83
 enable_offload: false
-total_train_epochs: 100
+total_train_epochs: 1
 tokenizer_path: ${actor.path}
 
 cluster:
