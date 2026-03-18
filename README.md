@@ -4,9 +4,9 @@
 
 [![Paper](https://img.shields.io/badge/Paper-arXiv%3A2503.06749-B31B1B.svg)](https://arxiv.org/abs/2503.06749)
 [![Code](https://img.shields.io/badge/Code-GitHub-181717.svg?logo=github)](https://github.com/Henry-Who321/RAdaR)
-[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models)](https://huggingface.co/hengrui1234/RAdaR)
-[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Data-FFD21E)](https://huggingface.co/datasets/hengrui1234/RADAR_IMAGES)
-
+<br>
+[![Hugging Face Models](https://img.shields.io/badge/%F0%9F%A4%97%20Model-RAdaR--7B-blue)](https://huggingface.co/hengrui1234/RAdaR)
+[![Hugging Face Data](https://img.shields.io/badge/%F0%9F%A4%97%20Data-RADAR--IMAGES-FFD21E)](https://huggingface.co/datasets/hengrui1234/RADAR_IMAGES)
 </div>
 
 ## 📝 Abstract
