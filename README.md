@@ -46,12 +46,29 @@ pip install -r requirements-dev.txt
 # 6. (Optional) If you need latex2sympy2 for evaluation:
 pip install -e evaluation/latex2sympy
 ```
-2. Prepare training dataset
+### Prepare
+# 1. Download training dataset
 ```bash
 pip install huggingface_hub
 
 huggingface-cli download --repo-type dataset hengrui1234/RADAR_IMAGES --local-dir ./radar_images
 ```
+
+# 2. Modify image dir
+You need to change the data path in the code to your actual local storage path.
+Please modify the `custom_image_dir = "/PATH/TO/YOUR/RADAR_IMAGES" `in the following scripts in batches:
+radar_stage1_1_train.py
+radar_stage1_2_train.py
+radar_stage2_train.py
+custom_image_dir = "/PATH/TO/YOUR/RADAR_IMAGES"
+
+# 2. Download checkpoint
+```bash
+huggingface-cli download Qwen/Qwen3-VL-4B-Instruct --local-dir ./qwen3vl_7b
+huggingface-cli download --repo-type dataset hengrui1234/RADAR_IMAGES --local-dir ./stage1.1ckpt
+huggingface-cli download --repo-type dataset hengrui1234/RADAR_IMAGES --local-dir ./stage1.2ckpt
+```bash
+
 
 ## 🚀 1. Stage 1.1
 ```bash
