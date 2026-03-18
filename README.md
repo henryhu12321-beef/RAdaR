@@ -1,7 +1,6 @@
-div align="center">
+<div align="center">
 
-# 🛰️ RAdaR: RL-Native Adaptive Reasoning 
-### **with Capability-Aware Data Curation for VLMs**
+# 🛰️ RAdaR: RL-Native Adaptive Reasoning with Capability-Aware Data Curation for VLMs
 
 [![Paper](https://img.shields.io/badge/Paper-arXiv%3A2503.06749-B31B1B.svg)](https://arxiv.org/abs/2503.06749)
 [![Code](https://img.shields.io/badge/Code-GitHub-181717.svg?logo=github)](https://github.com/Henry-Who321/RAdaR)
