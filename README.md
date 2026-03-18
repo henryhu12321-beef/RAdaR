@@ -56,9 +56,13 @@ huggingface-cli download --repo-type dataset hengrui1234/RADAR_IMAGES --local-di
 
 #### 2. Modify image dir
 You need to change the data path in the code to your actual local storage path.
+
 Please modify the `custom_image_dir = "/PATH/TO/YOUR/RADAR_IMAGES" `in the following scripts:
+
 `examples/vlm/radar_stage1_1_train.py`
+
 `examples/vlm/radar_stage1_2_train.py`
+
 `examples/vlm/radar_stage2_train.py`
 
 
