@@ -57,14 +57,14 @@ pip install -r requirements-dev.txt
 pip install -e evaluation/latex2sympy
 ```
 #### Dataset & Checkpoint
-##### 1. Download training dataset
+1. Download training dataset
 ```bash
 pip install huggingface_hub
 
 huggingface-cli download --repo-type dataset hengrui1234/RADAR_IMAGES --local-dir ./radar_images
 ```
 
-##### 2. Modify image dir
+2. Modify image dir
 You need to change the data path in the code to your actual local storage path.
 
 Please modify the `custom_image_dir = "/PATH/TO/YOUR/RADAR_IMAGES" `in the following scripts:
@@ -76,13 +76,13 @@ Please modify the `custom_image_dir = "/PATH/TO/YOUR/RADAR_IMAGES" `in the follo
 `examples/vlm/radar_stage2_train.py`
 
 
-##### 3. Download checkpoint
+3. Download checkpoint
 https://huggingface.co/hengrui1234/RAdaR
 ```bash
 huggingface-cli download Qwen/Qwen3-VL-4B-Instruct --local-dir ./qwen3vl_7b
 huggingface-cli download --repo-type dataset hengrui1234/RAdaR --local-dir ./radar_checkpoint
 ```
-###### 4. Modify checkpoint dir
+4. Modify checkpoint dir
 You need to change the checkpoint path in the code to your actual local storage path.
 
 Please modify the `path: <YOUR_LOCAL_PATH_TO_Qwen3-VL-4B-Instruct> ` in `examples/vlm/radar_gspo_stage1_1_bs32_rollout32.yaml`
