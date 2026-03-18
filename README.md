@@ -46,6 +46,11 @@ pip install -r requirements-dev.txt
 # 6. (Optional) If you need latex2sympy2 for evaluation:
 pip install -e evaluation/latex2sympy
 ```
+2. 
+```bash
+pip install huggingface_hub
+huggingface-cli download --repo-type dataset hengrui1234/RADAR_IMAGES --local-dir ./radar_images
+```
 
 ## 🚀 1. Stage 1.1
 ```bash
