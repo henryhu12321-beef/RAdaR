@@ -16,8 +16,8 @@ Vision-Language Models (VLMs) excel in complex reasoning tasks but are often con
 
 ## 🚀 Getting Started
 
-## 🔧 0. Before You Start
-### System Requirements
+### 🔧 0. Before You Start
+#### System Requirements
 
 | Component | Version |
 |-----------|---------|
@@ -28,7 +28,7 @@ Vision-Language Models (VLMs) excel in complex reasoning tasks but are often con
 | GPU | NVIDIA A800/A100/H100 (80GB recommended) |
 | PyTorch | 2.8.0+cu128 |
 
-### Installation
+#### Installation
 1. Clone the repository:
 ```bash
 cd RAdaR
@@ -56,15 +56,15 @@ pip install -r requirements-dev.txt
 # 6. (Optional) If you need latex2sympy2 for evaluation:
 pip install -e evaluation/latex2sympy
 ```
-### Prepare
-#### 1. Download training dataset
+#### Dataset & Checkpoint
+##### 1. Download training dataset
 ```bash
 pip install huggingface_hub
 
 huggingface-cli download --repo-type dataset hengrui1234/RADAR_IMAGES --local-dir ./radar_images
 ```
 
-#### 2. Modify image dir
+##### 2. Modify image dir
 You need to change the data path in the code to your actual local storage path.
 
 Please modify the `custom_image_dir = "/PATH/TO/YOUR/RADAR_IMAGES" `in the following scripts:
@@ -82,7 +82,7 @@ https://huggingface.co/hengrui1234/RAdaR
 huggingface-cli download Qwen/Qwen3-VL-4B-Instruct --local-dir ./qwen3vl_7b
 huggingface-cli download --repo-type dataset hengrui1234/RAdaR --local-dir ./radar_checkpoint
 ```
-#### 4. Modify checkpoint dir
+###### 4. Modify checkpoint dir
 You need to change the checkpoint path in the code to your actual local storage path.
 
 Please modify the `path: <YOUR_LOCAL_PATH_TO_Qwen3-VL-4B-Instruct> ` in `examples/vlm/radar_gspo_stage1_1_bs32_rollout32.yaml`
@@ -91,6 +91,7 @@ Please modify the `path: <YOUR_LOCAL_PATH_TO_STAGE1_1_CHECKPOINT> ` in `examples
 
 Please modify the `path: <YOUR_LOCAL_PATH_TO_STAGE1_2_CHECKPOINT> ` in `examples/vlm/radar_gspo_stage2_bs32_rollout32.yaml`
 
+### 🔧 1. Training
 ## 🚀 1. Stage 1.1
 ```bash
 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python3 -m areal.launcher.local examples/vlm/radar_stage1_1_train.py --config examples/vlm/radar_gspo_stage1_1_bs32_rollout32.yaml
@@ -105,3 +106,8 @@ CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python3 -m areal.launcher.local examples/vl
 ```bash
 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python3 -m areal.launcher.local examples/vlm/radar_stage2_train.py --config examples/vlm/radar_gspo_stage2_bs32_rollout32.yaml
 ```
+
+## 📄 Citation
+
+```bibtex
+```bibtex
