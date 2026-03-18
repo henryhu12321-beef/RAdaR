@@ -1,25 +1,21 @@
-<p align="center">
-  <b>RAdaR: RL-Native Adaptive Reasoning with Capability-Aware Data Curation for VLMs</b>
-</p>
+div align="center">
 
-<p align="center">
-  <a href="https://arxiv.org/abs/2503.06749">
-    <img src="https://img.shields.io/badge/Paper-arXiv%3A2503.06749-B31B1B.svg" alt="Paper">
-  </a>
-  <a href="https://github.com/Henry-Who321/RAdaR">
-    <img src="https://img.shields.io/badge/Code-GitHub-181717.svg?logo=github" alt="Code">
-  </a>
-</p>
+# 🛰️ RAdaR: RL-Native Adaptive Reasoning 
+### **with Capability-Aware Data Curation for VLMs**
 
-<p align="center">
-  <b>📦 Datasets:</b> 
-  <a href="https://huggingface.co/datasets/hengrui1234/RADAR_IMAGES">RAdaR_train_dataset</a>
-</p>
+[![Paper](https://img.shields.io/badge/Paper-arXiv%3A2503.06749-B31B1B.svg)](https://arxiv.org/abs/2503.06749)
+[![Code](https://img.shields.io/badge/Code-GitHub-181717.svg?logo=github)](https://github.com/Henry-Who321/RAdaR)
+[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models%20%26%20Data-FFD21E)](https://huggingface.co/hengrui1234/RAdaR)
 
-<p align="center">
-  <b>🚀 Checkpoints:</b> 
-  <a href="https://huggingface.co/hengrui1234/RAdaR">RAdaR-7B</a> 
-</p>
+---
+
+| 📦 **Datasets** | 🚀 **Checkpoints** |
+| :--- | :--- |
+| [RAdaR_train_dataset](https://huggingface.co/datasets/hengrui1234/RADAR_IMAGES) | [RAdaR-7B (Full Model)](https://huggingface.co/hengrui1234/RAdaR) |
+| | [Stage 1.1 - 4B](https://huggingface.co/hengrui1234/RAdaR) |
+| | [Stage 1.2 - 4B](https://huggingface.co/hengrui1234/RAdaR) |
+
+</div>
 
 ## 📝 Abstract
 Vision-Language Models (VLMs) excel in complex reasoning tasks but are often constrained by the issue of overthinking and underthinking, limiting their applicability in real-world scenarios. Existing adaptive reasoning approaches face critical challenges, including data scarcity, catastrophic forgetting, and sensitivity to prompts. To address these limitations, we propose AdaR, an RL-native framework for adaptive reasoning with a two-stage training process: In Stage I, the model is trained to produce outputs that follow the prescribed formats of the two reasoning modes, Thinking and Instant, using a curriculum-style formatting strategy. In Stage II, we model adaptive reasoning as a reasoning mode selection problem and train the model to dynamically choose appropriate strategies for each input by predicting the corresponding mode-control start token. In addition, we introduce a capability-aware data construction pipeline that provides highly discriminative supervision for adaptive reasoning in VLMs. Experimental results demonstrate that RAdaR achieves a significant reduction in reasoning overhead while improving accuracy by up to 7.6% over the base model and 14.7% over SOTA methods, respectively. To ensure reproducibility and promote further research, we will release the code, datasets, and model weights.
