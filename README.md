@@ -71,8 +71,11 @@ huggingface-cli download --repo-type dataset hengrui1234/RADAR_IMAGES --local-di
 ```
 #### 4. Modify checkpoint dir
 You need to change the checkpoint path in the code to your actual local storage path.
+
 Please modify the `path: <YOUR_LOCAL_PATH_TO_Qwen3-VL-4B-Instruct> ` in examples/vlm/radar_gspo_stage1_1_bs32_rollout32.yaml
+
 Please modify the `path: <YOUR_LOCAL_PATH_TO_STAGE1_1_CHECKPOINT> ` in examples/vlm/radar_gspo_stage1_2_bs32_rollout32.yaml
+
 Please modify the `path: <YOUR_LOCAL_PATH_TO_STAGE1_2_CHECKPOINT> ` in examples/vlm/radar_gspo_stage2_bs32_rollout32.yaml
 
 ## 🚀 1. Stage 1.1
