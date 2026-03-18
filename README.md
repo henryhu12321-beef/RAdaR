@@ -1,41 +1,31 @@
-# RAdaR: RL-Native Adaptive Reasoning with Capability-Aware Data Curation for VLMs
-## 📝 Abstract
-Vision-Language Models (VLMs) excel in complex reasoning tasks but are often constrained by the issue of overthinking and underthinking, limiting their applicability in real-world scenarios. Existing adaptive reasoning approaches face critical challenges, including data scarcity, catastrophic forgetting, and sensitivity to prompts. To address these limitations, we propose AdaR, an RL-native framework for adaptive reasoning with a two-stage training process: In Stage I, the model is trained to produce outputs that follow the prescribed formats of the two reasoning modes, Thinking and Instant, using a curriculum-style formatting strategy. In Stage II, we model adaptive reasoning as a reasoning mode selection problem and train the model to dynamically choose appropriate strategies for each input by predicting the corresponding mode-control start token. In addition, we introduce a capability-aware data construction pipeline that provides highly discriminative supervision for adaptive reasoning in VLMs. Experimental results demonstrate that RAdaR achieves a significant reduction in reasoning overhead while improving accuracy by up to 7.6% over the base model and 14.7% over SOTA methods, respectively. To ensure reproducibility and promote further research, we will release the code, datasets, and model weights.
-
-![Three-stage pipeline](figures/framework.png)
-
 <p align="center">
-  <b>Vision-R1: Incentivizing Reasoning Capability in Multimodal Large Language Models</b>
+  <b>RAdaR: RL-Native Adaptive Reasoning with Capability-Aware Data Curation for VLMs</b>
 </p>
 
 <p align="center">
   <a href="https://arxiv.org/abs/2503.06749">
     <img src="https://img.shields.io/badge/Paper-arXiv%3A2503.06749-B31B1B.svg" alt="Paper">
   </a>
-  <a href="https://github.com/你的用户名/你的仓库名">
+  <a href="https://github.com/Henry-Who321/RAdaR">
     <img src="https://img.shields.io/badge/Code-GitHub-181717.svg?logo=github" alt="Code">
   </a>
 </p>
 
 <p align="center">
   <b>📦 Datasets:</b> 
-  <a href="https://huggingface.co/datasets/Osilly/Vision-R1-cold">Vision-R1-Cold</a> | 
-  <a href="https://huggingface.co/datasets/Osilly/Vision-R1-rl">Vision-R1-RL</a>
+  <a href="https://huggingface.co/datasets/Osilly/Vision-R1-cold">RAdaR_train_dataset</a> | 
 </p>
 
 <p align="center">
   <b>🚀 Checkpoints:</b> 
   <a href="https://huggingface.co/Osilly/Vision-R1-CI-7B">CI-7B</a> | 
-  <a href="https://huggingface.co/Osilly/Vision-R1-7B">7B</a> | 
-  <a href="https://huggingface.co/Osilly/Vision-R1-32B">32B</a> | 
-  <a href="https://huggingface.co/Osilly/Vision-R1-72B">72B</a>
 </p>
 
----
+## 📝 Abstract
+Vision-Language Models (VLMs) excel in complex reasoning tasks but are often constrained by the issue of overthinking and underthinking, limiting their applicability in real-world scenarios. Existing adaptive reasoning approaches face critical challenges, including data scarcity, catastrophic forgetting, and sensitivity to prompts. To address these limitations, we propose AdaR, an RL-native framework for adaptive reasoning with a two-stage training process: In Stage I, the model is trained to produce outputs that follow the prescribed formats of the two reasoning modes, Thinking and Instant, using a curriculum-style formatting strategy. In Stage II, we model adaptive reasoning as a reasoning mode selection problem and train the model to dynamically choose appropriate strategies for each input by predicting the corresponding mode-control start token. In addition, we introduce a capability-aware data construction pipeline that provides highly discriminative supervision for adaptive reasoning in VLMs. Experimental results demonstrate that RAdaR achieves a significant reduction in reasoning overhead while improving accuracy by up to 7.6% over the base model and 14.7% over SOTA methods, respectively. To ensure reproducibility and promote further research, we will release the code, datasets, and model weights.
 
-> [!TIP]
-> **Status:** The datasets, code, and weights are being progressively released. Stay tuned for further updates!
-> 
+![Three-stage pipeline](figures/framework.png)
+
 ## 🚀 Getting Started
 
 ## 🔧 0. Before You Start
