@@ -56,20 +56,24 @@ huggingface-cli download --repo-type dataset hengrui1234/RADAR_IMAGES --local-di
 
 #### 2. Modify image dir
 You need to change the data path in the code to your actual local storage path.
-Please modify the `custom_image_dir = "/PATH/TO/YOUR/RADAR_IMAGES" `in the following scripts in batches:
+Please modify the `custom_image_dir = "/PATH/TO/YOUR/RADAR_IMAGES" `in the following scripts:
+```bash
+examples/vlm/radar_stage1_1_train.py
+examples/vlm/radar_stage1_2_train.py
+examples/vlm/radar_stage2_train.py
+```
 
-radar_stage1_1_train.py
-radar_stage1_2_train.py
-radar_stage2_train.py
-custom_image_dir = "/PATH/TO/YOUR/RADAR_IMAGES"
-
-#### 2. Download checkpoint
+##### 3. Download checkpoint
 ```bash
 huggingface-cli download Qwen/Qwen3-VL-4B-Instruct --local-dir ./qwen3vl_7b
 huggingface-cli download --repo-type dataset hengrui1234/RADAR_IMAGES --local-dir ./stage1.1ckpt
 huggingface-cli download --repo-type dataset hengrui1234/RADAR_IMAGES --local-dir ./stage1.2ckpt
 ```
-
+#### 4. Modify checkpoint dir
+You need to change the checkpoint path in the code to your actual local storage path.
+Please modify the `path: <YOUR_LOCAL_PATH_TO_Qwen3-VL-4B-Instruct> ` in examples/vlm/radar_gspo_stage1_1_bs32_rollout32.yaml
+Please modify the `path: <YOUR_LOCAL_PATH_TO_STAGE1_1_CHECKPOINT> ` in examples/vlm/radar_gspo_stage1_2_bs32_rollout32.yaml
+Please modify the `path: <YOUR_LOCAL_PATH_TO_STAGE1_2_CHECKPOINT> ` in examples/vlm/radar_gspo_stage2_bs32_rollout32.yaml
 
 ## 🚀 1. Stage 1.1
 ```bash
