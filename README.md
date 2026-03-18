@@ -4,6 +4,38 @@ Vision-Language Models (VLMs) excel in complex reasoning tasks but are often con
 
 ![Three-stage pipeline](figures/framework.png)
 
+<p align="center">
+  <b>Vision-R1: Incentivizing Reasoning Capability in Multimodal Large Language Models</b>
+</p>
+
+<p align="center">
+  <a href="https://arxiv.org/abs/2503.06749">
+    <img src="https://img.shields.io/badge/Paper-arXiv%3A2503.06749-B31B1B.svg" alt="Paper">
+  </a>
+  <a href="https://github.com/你的用户名/你的仓库名">
+    <img src="https://img.shields.io/badge/Code-GitHub-181717.svg?logo=github" alt="Code">
+  </a>
+</p>
+
+<p align="center">
+  <b>📦 Datasets:</b> 
+  <a href="https://huggingface.co/datasets/Osilly/Vision-R1-cold">Vision-R1-Cold</a> | 
+  <a href="https://huggingface.co/datasets/Osilly/Vision-R1-rl">Vision-R1-RL</a>
+</p>
+
+<p align="center">
+  <b>🚀 Checkpoints:</b> 
+  <a href="https://huggingface.co/Osilly/Vision-R1-CI-7B">CI-7B</a> | 
+  <a href="https://huggingface.co/Osilly/Vision-R1-7B">7B</a> | 
+  <a href="https://huggingface.co/Osilly/Vision-R1-32B">32B</a> | 
+  <a href="https://huggingface.co/Osilly/Vision-R1-72B">72B</a>
+</p>
+
+---
+
+> [!TIP]
+> **Status:** The datasets, code, and weights are being progressively released. Stay tuned for further updates!
+> 
 ## 🚀 Getting Started
 
 ## 🔧 0. Before You Start
@@ -67,6 +99,7 @@ Please modify the `custom_image_dir = "/PATH/TO/YOUR/RADAR_IMAGES" `in the follo
 
 
 ##### 3. Download checkpoint
+https://huggingface.co/hengrui1234/RAdaR
 ```bash
 huggingface-cli download Qwen/Qwen3-VL-4B-Instruct --local-dir ./qwen3vl_7b
 huggingface-cli download --repo-type dataset hengrui1234/RAdaR --local-dir ./radar_checkpoint
