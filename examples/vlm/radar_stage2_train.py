@@ -33,9 +33,9 @@ from areal.workflow.vision_rlvr import VisionRLVRWorkflow
 from examples.vlm.dataset import LazyVLMJsonlDataset
 from examples.vlm.reward_fn import RAdar_stage2_reward_fn
 
-custom_image_dir = os.environ.get("VLM_IMAGE_DIR", "/PATH/TO/YOUR/IMAGES")
+custom_image_dir = "/PATH/TO/YOUR/RADAR_IMAGES"
 # The base directory where your images are stored.
-# Please update this path or set the VLM_IMAGE_DIR environment variable.
+# Please update this path
 
 # ==========================================
 # Main Function
