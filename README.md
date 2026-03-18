@@ -13,12 +13,12 @@
 
 <p align="center">
   <b>📦 Datasets:</b> 
-  <a href="https://huggingface.co/datasets/Osilly/Vision-R1-cold">RAdaR_train_dataset</a> | 
+  <a href="https://huggingface.co/datasets/hengrui1234/RADAR_IMAGES">RAdaR_train_dataset</a>
 </p>
 
 <p align="center">
   <b>🚀 Checkpoints:</b> 
-  <a href="https://huggingface.co/Osilly/Vision-R1-CI-7B">CI-7B</a> | 
+  <a href="https://huggingface.co/hengrui1234/RAdaR">RAdaR-7B</a> 
 </p>
 
 ## 📝 Abstract
