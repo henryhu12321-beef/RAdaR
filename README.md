@@ -80,7 +80,7 @@ Please modify the `custom_image_dir = "/PATH/TO/YOUR/RADAR_IMAGES" `in the follo
 3. Download checkpoint
 
 ```bash
-huggingface-cli download Qwen/Qwen3-VL-4B-Instruct --local-dir ./qwen3vl_7b
+huggingface-cli download Qwen/Qwen3-VL-4B-Instruct --local-dir ./qwen3vl_4b
 huggingface-cli download --repo-type dataset hengrui1234/RAdaR --local-dir ./radar_checkpoint
 ```
 4. Modify checkpoint dir
