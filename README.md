@@ -10,7 +10,7 @@
 </div>
 
 ## 📝 Abstract
-Vision-Language Models (VLMs) excel in complex reasoning tasks but are often constrained by the issue of overthinking and underthinking, limiting their applicability in real-world scenarios. Existing adaptive reasoning approaches face critical challenges, including data scarcity, catastrophic forgetting, and sensitivity to prompts. To address these limitations, we propose AdaR, an RL-native framework for adaptive reasoning with a two-stage training process: In Stage I, the model is trained to produce outputs that follow the prescribed formats of the two reasoning modes, Thinking and Instant, using a curriculum-style formatting strategy. In Stage II, we model adaptive reasoning as a reasoning mode selection problem and train the model to dynamically choose appropriate strategies for each input by predicting the corresponding mode-control start token. In addition, we introduce a capability-aware data construction pipeline that provides highly discriminative supervision for adaptive reasoning in VLMs. Experimental results demonstrate that RAdaR achieves a significant reduction in reasoning overhead while improving accuracy by up to 7.6% over the base model and 14.7% over SOTA methods, respectively. To ensure reproducibility and promote further research, we will release the code, datasets, and model weights.
+Vision-Language Models (VLMs) excel in complex reasoning tasks but are often constrained by overthinking and underthinking, limiting their applicability in real-world scenarios. Existing adaptive reasoning approaches face critical challenges, including data scarcity, catastrophic forgetting, and sensitivity to prompts. To address these limitations, we propose AdaR, an RL-native framework for adaptive reasoning with a two-stage training process: In Stage I, the model is trained to produce outputs that follow the prescribed formats of the two reasoning modes, Thinking and Instant, using a curriculum-style formatting strategy. In Stage II, we model adaptive reasoning as a reasoning mode selection problem and train the model to dynamically choose appropriate strategies for each input by predicting the corresponding mode-control start token. In addition, we introduce a capability-aware data construction pipeline that provides highly discriminative supervision for adaptive reasoning in VLMs. Experimental results demonstrate that RAdaR achieves a significant reduction in reasoning overhead while improving accuracy by up to 7.6% over the base model and 14.7% over SOTA methods, respectively. To ensure reproducibility and promote further research, we will release the code, datasets, and model weights.
 
 ![Three-stage pipeline](figures/framework.png)
 
@@ -81,32 +81,45 @@ Please modify the `custom_image_dir = "/PATH/TO/YOUR/RADAR_IMAGES" `in the follo
 
 ```bash
 huggingface-cli download Qwen/Qwen3-VL-4B-Instruct --local-dir ./qwen3vl_4b
+huggingface-cli download Qwen/Qwen3-VL-8B-Instruct --local-dir ./qwen3vl_8b
 huggingface-cli download --repo-type dataset hengrui1234/RAdaR --local-dir ./radar_checkpoint
 ```
 4. Modify checkpoint dir
 
 You need to change the checkpoint path in the code to your actual local storage path.
 
-Please modify the `path: <YOUR_LOCAL_PATH_TO_Qwen3-VL-4B-Instruct> ` in `examples/vlm/radar_gspo_stage1_1_bs32_rollout32.yaml`
+Please modify the `path: <YOUR_LOCAL_PATH_TO_Qwen3-VL-4B-Instruct> ` in `examples/vlm/4b_radar_gspo_stage1_1_bs32_rollout32.yaml`
 
-Please modify the `path: <YOUR_LOCAL_PATH_TO_STAGE1_1_CHECKPOINT> ` in `examples/vlm/radar_gspo_stage1_2_bs32_rollout32.yaml`
+Please modify the `path: <YOUR_LOCAL_PATH_TO_STAGE1_1_4B_CHECKPOINT> ` in `examples/vlm/4b_radar_gspo_stage1_2_bs32_rollout32.yaml`
 
-Please modify the `path: <YOUR_LOCAL_PATH_TO_STAGE1_2_CHECKPOINT> ` in `examples/vlm/radar_gspo_stage2_bs32_rollout32.yaml`
+Please modify the `path: <YOUR_LOCAL_PATH_TO_STAGE1_2_4B_CHECKPOINT> ` in `examples/vlm/4b_radar_gspo_stage2_bs32_rollout32.yaml`
+
+Please modify the `path: <YOUR_LOCAL_PATH_TO_Qwen3-VL-8B-Instruct> ` in `examples/vlm/8b_radar_gspo_stage1_1_bs32_rollout32.yaml`
+
+Please modify the `path: <YOUR_LOCAL_PATH_TO_STAGE1_1_8B_CHECKPOINT> ` in `examples/vlm/8b_radar_gspo_stage1_2_bs32_rollout32.yaml`
+
+Please modify the `path: <YOUR_LOCAL_PATH_TO_STAGE1_2_8B_CHECKPOINT> ` in `examples/vlm/8b_radar_gspo_stage2_bs32_rollout32.yaml`
 
 ### 🔧 1. Training
 ## 🚀 1. Stage 1.1
 ```bash
-CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python3 -m areal.launcher.local examples/vlm/radar_stage1_1_train.py --config examples/vlm/radar_gspo_stage1_1_bs32_rollout32.yaml
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python3 -m areal.launcher.local examples/vlm/radar_stage1_1_train.py --config examples/vlm/4b_radar_gspo_stage1_1_bs32_rollout32.yaml
+
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python3 -m areal.launcher.local examples/vlm/radar_stage1_1_train.py --config examples/vlm/8b_radar_gspo_stage1_1_bs32_rollout32.yaml
 ```
 
 ## 🚀 2. Stage 1.2
 ```bash
-CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python3 -m areal.launcher.local examples/vlm/radar_stage1_2_train.py --config examples/vlm/radar_gspo_stage1_2_bs32_rollout32.yaml
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python3 -m areal.launcher.local examples/vlm/radar_stage1_2_train.py --config examples/vlm/4b_radar_gspo_stage1_2_bs32_rollout32.yaml
+
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python3 -m areal.launcher.local examples/vlm/radar_stage1_2_train.py --config examples/vlm/8b_radar_gspo_stage1_2_bs32_rollout32.yaml
 ```
 
 ## 🚀 3. Stage 2
 ```bash
-CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python3 -m areal.launcher.local examples/vlm/radar_stage2_train.py --config examples/vlm/radar_gspo_stage2_bs32_rollout32.yaml
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python3 -m areal.launcher.local examples/vlm/radar_stage2_train.py --config examples/vlm/4b_radar_gspo_stage2_bs32_rollout32.yaml
+
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python3 -m areal.launcher.local examples/vlm/radar_stage2_train.py --config examples/vlm/8b_radar_gspo_stage2_bs32_rollout32.yaml
 ```
 
 ## 📄 Citation
